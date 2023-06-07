@@ -7,10 +7,24 @@
 
 import Foundation
 
-public enum ErrorTypes: String, Error {
-    case invalidData = "Invalid data"
-    case invalidUrl = "invalid url"
-    case generalError = "An error happened"
+public enum NetworkError: Error {
+    case invalidRequest
+    case requestFailed
+    case jsonDecodedError
+    case customError(Error)
+
+    var localizedDescription: String {
+        switch self {
+        case .invalidRequest:
+            return "Invalid Request"
+        case .requestFailed:
+            return "Request Failed"
+        case .jsonDecodedError:
+            return "JSON Decoded Error"
+        case .customError(let error):
+            return error.localizedDescription
+        }
+    }
 }
 
 public final class NetworkHelper {

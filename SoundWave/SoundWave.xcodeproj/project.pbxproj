@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C1EF1242A30786E00081CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1232A30786E00081CF5 /* AppDelegate.swift */; };
 		0C1EF1262A30786E00081CF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1252A30786E00081CF5 /* SceneDelegate.swift */; };
-		0C1EF1282A30786E00081CF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1272A30786E00081CF5 /* ViewController.swift */; };
+		0C1EF1282A30786E00081CF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1272A30786E00081CF5 /* HomeViewController.swift */; };
 		0C1EF12B2A30786E00081CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF1292A30786E00081CF5 /* Main.storyboard */; };
 		0C1EF12E2A30786E00081CF5 /* SoundWave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF12C2A30786E00081CF5 /* SoundWave.xcdatamodeld */; };
 		0C1EF1302A30786F00081CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF12F2A30786F00081CF5 /* Assets.xcassets */; };
@@ -19,6 +19,13 @@
 		0C1EF14A2A30786F00081CF5 /* SoundWaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1492A30786F00081CF5 /* SoundWaveUITestsLaunchTests.swift */; };
 		0C1EF15B2A30840700081CF5 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF15A2A30840700081CF5 /* HomePresenter.swift */; };
 		0C1EF15D2A30840F00081CF5 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF15C2A30840F00081CF5 /* HomeRouter.swift */; };
+		0C1EF15F2A30899500081CF5 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF15E2A30899500081CF5 /* HomeInteractor.swift */; };
+		0C1EF1632A3089F400081CF5 /* SoundWaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1622A3089F400081CF5 /* SoundWaveManager.swift */; };
+		0C1EF1662A308A2C00081CF5 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1EF1652A308A2C00081CF5 /* Network */; };
+		0C1EF1682A308FA600081CF5 /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1672A308FA600081CF5 /* Tracks.swift */; };
+		0C1EF16B2A30BB0100081CF5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */; };
+		0C1EF16F2A30BB6300081CF5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF16E2A30BB6300081CF5 /* LoadingView.swift */; };
+		0C1EF1712A30BB7A00081CF5 /* LoadingShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1702A30BB7A00081CF5 /* LoadingShowable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +49,7 @@
 		0C1EF1202A30786E00081CF5 /* SoundWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1EF1232A30786E00081CF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C1EF1252A30786E00081CF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C1EF1272A30786E00081CF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0C1EF1272A30786E00081CF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0C1EF12A2A30786E00081CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C1EF12D2A30786E00081CF5 /* SoundWave.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundWave.xcdatamodel; sourceTree = "<group>"; };
 		0C1EF12F2A30786F00081CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +63,12 @@
 		0C1EF1562A307BD400081CF5 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Network; path = ../Network; sourceTree = "<group>"; };
 		0C1EF15A2A30840700081CF5 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		0C1EF15C2A30840F00081CF5 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		0C1EF15E2A30899500081CF5 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		0C1EF1622A3089F400081CF5 /* SoundWaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveManager.swift; sourceTree = "<group>"; };
+		0C1EF1672A308FA600081CF5 /* Tracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracks.swift; sourceTree = "<group>"; };
+		0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0C1EF16E2A30BB6300081CF5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0C1EF1702A30BB7A00081CF5 /* LoadingShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingShowable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1EF1662A308A2C00081CF5 /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +105,7 @@
 				0C1EF13C2A30786F00081CF5 /* SoundWaveTests */,
 				0C1EF1462A30786F00081CF5 /* SoundWaveUITests */,
 				0C1EF1212A30786E00081CF5 /* Products */,
+				0C1EF1642A308A2C00081CF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,9 +122,12 @@
 		0C1EF1222A30786E00081CF5 /* SoundWave */ = {
 			isa = PBXGroup;
 			children = (
+				0C1EF16C2A30BB3F00081CF5 /* CustomViews */,
+				0C1EF1692A30BAF000081CF5 /* Utils */,
+				0C1EF1612A3089D600081CF5 /* Network */,
+				0C1EF1602A3089CF00081CF5 /* Model */,
 				0C1EF1582A3083F100081CF5 /* Scenes */,
 				0C1EF1572A3083DC00081CF5 /* App */,
-				0C1EF1272A30786E00081CF5 /* ViewController.swift */,
 				0C1EF1292A30786E00081CF5 /* Main.storyboard */,
 				0C1EF1312A30786F00081CF5 /* LaunchScreen.storyboard */,
 				0C1EF1342A30786F00081CF5 /* Info.plist */,
@@ -156,10 +174,60 @@
 		0C1EF1592A3083F700081CF5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0C1EF1272A30786E00081CF5 /* HomeViewController.swift */,
 				0C1EF15A2A30840700081CF5 /* HomePresenter.swift */,
 				0C1EF15C2A30840F00081CF5 /* HomeRouter.swift */,
+				0C1EF15E2A30899500081CF5 /* HomeInteractor.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0C1EF1602A3089CF00081CF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EF1672A308FA600081CF5 /* Tracks.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C1EF1612A3089D600081CF5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EF1622A3089F400081CF5 /* SoundWaveManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0C1EF1642A308A2C00081CF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C1EF1692A30BAF000081CF5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0C1EF16C2A30BB3F00081CF5 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EF16D2A30BB4600081CF5 /* LoadingView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		0C1EF16D2A30BB4600081CF5 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EF16E2A30BB6300081CF5 /* LoadingView.swift */,
+				0C1EF1702A30BB7A00081CF5 /* LoadingShowable.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +246,9 @@
 			dependencies = (
 			);
 			name = SoundWave;
+			packageProductDependencies = (
+				0C1EF1652A308A2C00081CF5 /* Network */,
+			);
 			productName = SoundWave;
 			productReference = 0C1EF1202A30786E00081CF5 /* SoundWave.app */;
 			productType = "com.apple.product-type.application";
@@ -293,12 +364,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1EF1282A30786E00081CF5 /* ViewController.swift in Sources */,
+				0C1EF1282A30786E00081CF5 /* HomeViewController.swift in Sources */,
+				0C1EF1632A3089F400081CF5 /* SoundWaveManager.swift in Sources */,
 				0C1EF15D2A30840F00081CF5 /* HomeRouter.swift in Sources */,
+				0C1EF1712A30BB7A00081CF5 /* LoadingShowable.swift in Sources */,
+				0C1EF16F2A30BB6300081CF5 /* LoadingView.swift in Sources */,
 				0C1EF1242A30786E00081CF5 /* AppDelegate.swift in Sources */,
 				0C1EF12E2A30786E00081CF5 /* SoundWave.xcdatamodeld in Sources */,
+				0C1EF16B2A30BB0100081CF5 /* BaseViewController.swift in Sources */,
 				0C1EF15B2A30840700081CF5 /* HomePresenter.swift in Sources */,
+				0C1EF1682A308FA600081CF5 /* Tracks.swift in Sources */,
 				0C1EF1262A30786E00081CF5 /* SceneDelegate.swift in Sources */,
+				0C1EF15F2A30899500081CF5 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +719,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C1EF1652A308A2C00081CF5 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0C1EF12C2A30786E00081CF5 /* SoundWave.xcdatamodeld */ = {

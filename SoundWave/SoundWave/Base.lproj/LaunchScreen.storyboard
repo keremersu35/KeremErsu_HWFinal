@@ -27,8 +27,8 @@
                                             <constraint firstAttribute="height" constant="115" id="drc-ud-pJc"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOUNDIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-yt-x6Y">
-                                        <rect key="frame" x="29.666666666666664" y="123.00000000000001" width="126.66666666666669" height="33.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SoundWave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-yt-x6Y">
+                                        <rect key="frame" x="16.666666666666657" y="123.00000000000001" width="152.33333333333334" height="33.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                         <color key="textColor" name="Color"/>
                                         <nil key="highlightedColor"/>
