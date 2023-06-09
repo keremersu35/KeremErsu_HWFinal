@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SoundWave" customModuleProvider="target">
+            <connections>
+                <outlet property="searchTextField" destination="2J7-Ey-IHC" id="2q1-Ow-no4"/>
+                <outlet property="tableView" destination="WZ9-4T-qWo" id="Pqw-V4-eC9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for track, album, artist, etc..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2J7-Ey-IHC">
+                    <rect key="frame" x="16" y="75" width="361" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="KO3-i9-vh5"/>
+                    </constraints>
+                    <color key="textColor" name="Background"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WZ9-4T-qWo">
+                    <rect key="frame" x="0.0" y="136" width="393" height="682"/>
+                    <color key="backgroundColor" name="Background"/>
+                    <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" name="Background"/>
+                    <color key="sectionIndexTrackingBackgroundColor" red="0.21716853790000001" green="0.56389240539999996" blue="0.8506422776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="2J7-Ey-IHC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1iF-U4-tfx"/>
+                <constraint firstItem="2J7-Ey-IHC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="CBp-hB-KUv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZ9-4T-qWo" secondAttribute="trailing" id="STd-ix-tss"/>
+                <constraint firstItem="WZ9-4T-qWo" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="YGg-Z4-O41"/>
+                <constraint firstItem="WZ9-4T-qWo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gIU-6U-pqF"/>
+                <constraint firstItem="WZ9-4T-qWo" firstAttribute="top" secondItem="2J7-Ey-IHC" secondAttribute="bottom" constant="16" id="wkp-QH-IIB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2J7-Ey-IHC" secondAttribute="trailing" constant="16" id="wrT-8l-tWo"/>
+            </constraints>
+            <point key="canvasLocation" x="174.80916030534351" y="-38.028169014084511"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="0.14117647058823529" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

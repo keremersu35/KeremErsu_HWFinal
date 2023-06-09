@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C1EF1242A30786E00081CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1232A30786E00081CF5 /* AppDelegate.swift */; };
 		0C1EF1262A30786E00081CF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1252A30786E00081CF5 /* SceneDelegate.swift */; };
-		0C1EF1282A30786E00081CF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1272A30786E00081CF5 /* HomeViewController.swift */; };
 		0C1EF12B2A30786E00081CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF1292A30786E00081CF5 /* Main.storyboard */; };
 		0C1EF12E2A30786E00081CF5 /* SoundWave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF12C2A30786E00081CF5 /* SoundWave.xcdatamodeld */; };
 		0C1EF1302A30786F00081CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF12F2A30786F00081CF5 /* Assets.xcassets */; };
@@ -26,6 +25,24 @@
 		0C1EF16B2A30BB0100081CF5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */; };
 		0C1EF16F2A30BB6300081CF5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF16E2A30BB6300081CF5 /* LoadingView.swift */; };
 		0C1EF1712A30BB7A00081CF5 /* LoadingShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1702A30BB7A00081CF5 /* LoadingShowable.swift */; };
+		0C1EF1752A31EF7D00081CF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1732A31EF7D00081CF5 /* HomeViewController.swift */; };
+		0C1EF1762A31EF7D00081CF5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF1742A31EF7D00081CF5 /* HomeViewController.xib */; };
+		0C1EF1782A31EFDE00081CF5 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1772A31EFDE00081CF5 /* SplashRouter.swift */; };
+		0C1EF17A2A31F00100081CF5 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1792A31F00100081CF5 /* SplashInteractor.swift */; };
+		0C1EF17C2A31F00B00081CF5 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF17B2A31F00B00081CF5 /* SplashPresenter.swift */; };
+		0C1EF17F2A31F01900081CF5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */; };
+		0C1EF1802A31F01900081CF5 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */; };
+		0C1EF1822A31F09800081CF5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1812A31F09800081CF5 /* Reachability.swift */; };
+		0CF3DC802A31FA8E00386D21 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */; };
+		0CF3DC822A31FA9B00386D21 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */; };
+		0CF3DC842A31FAA400386D21 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC832A31FAA400386D21 /* DetailRouter.swift */; };
+		0CF3DC872A31FAB300386D21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC852A31FAB300386D21 /* DetailViewController.swift */; };
+		0CF3DC882A31FAB300386D21 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF3DC862A31FAB300386D21 /* DetailViewController.xib */; };
+		0CF3DC8C2A321AFC00386D21 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF3DC8B2A321AFC00386D21 /* Extensions */; };
+		0CF3DC902A3221E300386D21 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC8E2A3221E300386D21 /* TrackCell.swift */; };
+		0CF3DC912A3221E300386D21 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF3DC8F2A3221E300386D21 /* TrackCell.xib */; };
+		0CF3DC932A322CC000386D21 /* TrackCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC922A322CC000386D21 /* TrackCellModel.swift */; };
+		0CFD626B2A329531003EB522 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFD626A2A329531003EB522 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +66,6 @@
 		0C1EF1202A30786E00081CF5 /* SoundWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1EF1232A30786E00081CF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C1EF1252A30786E00081CF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C1EF1272A30786E00081CF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0C1EF12A2A30786E00081CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C1EF12D2A30786E00081CF5 /* SoundWave.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundWave.xcdatamodel; sourceTree = "<group>"; };
 		0C1EF12F2A30786F00081CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +85,24 @@
 		0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0C1EF16E2A30BB6300081CF5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0C1EF1702A30BB7A00081CF5 /* LoadingShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingShowable.swift; sourceTree = "<group>"; };
+		0C1EF1732A31EF7D00081CF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0C1EF1742A31EF7D00081CF5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		0C1EF1772A31EFDE00081CF5 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		0C1EF1792A31F00100081CF5 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		0C1EF17B2A31F00B00081CF5 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		0C1EF1812A31F09800081CF5 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		0CF3DC832A31FAA400386D21 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		0CF3DC852A31FAB300386D21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0CF3DC862A31FAB300386D21 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		0CF3DC8A2A321AB600386D21 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Extensions; path = ../Extensions; sourceTree = "<group>"; };
+		0CF3DC8E2A3221E300386D21 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		0CF3DC8F2A3221E300386D21 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		0CF3DC922A322CC000386D21 /* TrackCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellModel.swift; sourceTree = "<group>"; };
+		0CFD626A2A329531003EB522 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF3DC8C2A321AFC00386D21 /* Extensions in Frameworks */,
 				0C1EF1662A308A2C00081CF5 /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +135,7 @@
 		0C1EF1172A30786E00081CF5 = {
 			isa = PBXGroup;
 			children = (
+				0CF3DC8A2A321AB600386D21 /* Extensions */,
 				0C1EF1562A307BD400081CF5 /* Network */,
 				0C1EF1222A30786E00081CF5 /* SoundWave */,
 				0C1EF13C2A30786F00081CF5 /* SoundWaveTests */,
@@ -122,12 +158,12 @@
 		0C1EF1222A30786E00081CF5 /* SoundWave */ = {
 			isa = PBXGroup;
 			children = (
-				0C1EF16C2A30BB3F00081CF5 /* CustomViews */,
-				0C1EF1692A30BAF000081CF5 /* Utils */,
-				0C1EF1612A3089D600081CF5 /* Network */,
-				0C1EF1602A3089CF00081CF5 /* Model */,
-				0C1EF1582A3083F100081CF5 /* Scenes */,
 				0C1EF1572A3083DC00081CF5 /* App */,
+				0C1EF16C2A30BB3F00081CF5 /* CustomViews */,
+				0C1EF1602A3089CF00081CF5 /* Model */,
+				0C1EF1612A3089D600081CF5 /* Network */,
+				0C1EF1582A3083F100081CF5 /* Scenes */,
+				0C1EF1692A30BAF000081CF5 /* Utils */,
 				0C1EF1292A30786E00081CF5 /* Main.storyboard */,
 				0C1EF1312A30786F00081CF5 /* LaunchScreen.storyboard */,
 				0C1EF1342A30786F00081CF5 /* Info.plist */,
@@ -166,6 +202,8 @@
 		0C1EF1582A3083F100081CF5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0CF3DC7E2A31FA7900386D21 /* Detail */,
+				0C1EF1722A31EF5D00081CF5 /* Splash */,
 				0C1EF1592A3083F700081CF5 /* Home */,
 			);
 			path = Scenes;
@@ -174,10 +212,12 @@
 		0C1EF1592A3083F700081CF5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0C1EF1272A30786E00081CF5 /* HomeViewController.swift */,
+				0CF3DC8D2A3221CC00386D21 /* Cell */,
 				0C1EF15A2A30840700081CF5 /* HomePresenter.swift */,
 				0C1EF15C2A30840F00081CF5 /* HomeRouter.swift */,
 				0C1EF15E2A30899500081CF5 /* HomeInteractor.swift */,
+				0C1EF1732A31EF7D00081CF5 /* HomeViewController.swift */,
+				0C1EF1742A31EF7D00081CF5 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -186,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				0C1EF1672A308FA600081CF5 /* Tracks.swift */,
+				0CF3DC922A322CC000386D21 /* TrackCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */,
+				0C1EF1812A31F09800081CF5 /* Reachability.swift */,
+				0CFD626A2A329531003EB522 /* AudioPlayer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -230,6 +273,39 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
+		0C1EF1722A31EF5D00081CF5 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EF1772A31EFDE00081CF5 /* SplashRouter.swift */,
+				0C1EF1792A31F00100081CF5 /* SplashInteractor.swift */,
+				0C1EF17B2A31F00B00081CF5 /* SplashPresenter.swift */,
+				0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */,
+				0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		0CF3DC7E2A31FA7900386D21 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */,
+				0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */,
+				0CF3DC832A31FAA400386D21 /* DetailRouter.swift */,
+				0CF3DC852A31FAB300386D21 /* DetailViewController.swift */,
+				0CF3DC862A31FAB300386D21 /* DetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		0CF3DC8D2A3221CC00386D21 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0CF3DC8E2A3221E300386D21 /* TrackCell.swift */,
+				0CF3DC8F2A3221E300386D21 /* TrackCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +324,7 @@
 			name = SoundWave;
 			packageProductDependencies = (
 				0C1EF1652A308A2C00081CF5 /* Network */,
+				0CF3DC8B2A321AFC00386D21 /* Extensions */,
 			);
 			productName = SoundWave;
 			productReference = 0C1EF1202A30786E00081CF5 /* SoundWave.app */;
@@ -338,8 +415,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C1EF1332A30786F00081CF5 /* LaunchScreen.storyboard in Resources */,
+				0CF3DC882A31FAB300386D21 /* DetailViewController.xib in Resources */,
 				0C1EF1302A30786F00081CF5 /* Assets.xcassets in Resources */,
+				0CF3DC912A3221E300386D21 /* TrackCell.xib in Resources */,
 				0C1EF12B2A30786E00081CF5 /* Main.storyboard in Resources */,
+				0C1EF1802A31F01900081CF5 /* SplashViewController.xib in Resources */,
+				0C1EF1762A31EF7D00081CF5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,18 +445,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1EF1282A30786E00081CF5 /* HomeViewController.swift in Sources */,
 				0C1EF1632A3089F400081CF5 /* SoundWaveManager.swift in Sources */,
+				0C1EF17A2A31F00100081CF5 /* SplashInteractor.swift in Sources */,
 				0C1EF15D2A30840F00081CF5 /* HomeRouter.swift in Sources */,
+				0CF3DC802A31FA8E00386D21 /* DetailInteractor.swift in Sources */,
+				0C1EF1782A31EFDE00081CF5 /* SplashRouter.swift in Sources */,
+				0CF3DC902A3221E300386D21 /* TrackCell.swift in Sources */,
+				0CF3DC842A31FAA400386D21 /* DetailRouter.swift in Sources */,
+				0CF3DC872A31FAB300386D21 /* DetailViewController.swift in Sources */,
 				0C1EF1712A30BB7A00081CF5 /* LoadingShowable.swift in Sources */,
 				0C1EF16F2A30BB6300081CF5 /* LoadingView.swift in Sources */,
+				0C1EF1822A31F09800081CF5 /* Reachability.swift in Sources */,
+				0CFD626B2A329531003EB522 /* AudioPlayer.swift in Sources */,
 				0C1EF1242A30786E00081CF5 /* AppDelegate.swift in Sources */,
 				0C1EF12E2A30786E00081CF5 /* SoundWave.xcdatamodeld in Sources */,
+				0CF3DC822A31FA9B00386D21 /* DetailPresenter.swift in Sources */,
 				0C1EF16B2A30BB0100081CF5 /* BaseViewController.swift in Sources */,
 				0C1EF15B2A30840700081CF5 /* HomePresenter.swift in Sources */,
 				0C1EF1682A308FA600081CF5 /* Tracks.swift in Sources */,
+				0C1EF17C2A31F00B00081CF5 /* SplashPresenter.swift in Sources */,
 				0C1EF1262A30786E00081CF5 /* SceneDelegate.swift in Sources */,
 				0C1EF15F2A30899500081CF5 /* HomeInteractor.swift in Sources */,
+				0C1EF1752A31EF7D00081CF5 /* HomeViewController.swift in Sources */,
+				0C1EF17F2A31F01900081CF5 /* SplashViewController.swift in Sources */,
+				0CF3DC932A322CC000386D21 /* TrackCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +817,10 @@
 		0C1EF1652A308A2C00081CF5 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;
+		};
+		0CF3DC8B2A321AFC00386D21 /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
 		};
 /* End XCSwiftPackageProductDependency section */
 

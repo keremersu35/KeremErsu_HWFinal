@@ -33,10 +33,10 @@ extension HomeInteractor: HomeInteractorProtocol {
                 let result: TracksSourcesResult = .failure(error)
                 self.output?.fetchTracksOutput(result)
             } else if let response = response {
+                print(response)
                 let result: TracksSourcesResult = .success(response)
                 self.output?.fetchTracksOutput(result)
             }
-
         }
     }
 }

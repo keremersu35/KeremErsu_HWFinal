@@ -28,3 +28,10 @@ final class SoundWaveManager: SoundWaveManagerProtocol {
         }
     }
 }
+
+extension SoundWaveManager {
+    
+    func isConnectedToInternet() -> Bool {
+        return Reachability.isConnectedToNetwork()
+    }
+}

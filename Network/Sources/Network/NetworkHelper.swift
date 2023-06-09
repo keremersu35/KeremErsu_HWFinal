@@ -30,9 +30,10 @@ public enum NetworkError: Error {
 public final class NetworkHelper {
     public static let shared = NetworkHelper()
     
-    private var baseURL = "https://itunes.apple.com/search?"
+    private var baseURL = "https://itunes.apple.com/search?country=TR&media=all&term="
     
     public func requestUrl(_ url: String) -> String {
-        baseURL + url
+        print(url)
+        return baseURL + url
     }
 }
