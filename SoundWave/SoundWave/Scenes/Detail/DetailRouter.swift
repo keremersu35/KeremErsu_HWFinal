@@ -21,13 +21,14 @@ final class DetailRouter {
     weak var viewController: DetailViewController?
     
     static func createModule() -> DetailViewController {
-         let view = DetailViewController()
-         let router = DetailRouter()
-         let presenter = DetailPresenter(view: view, router: router)
-         view.presenter = presenter
-         router.viewController = view
-         return view
-     }
+        let view = DetailViewController()
+        let interactor = DetailInteractor()
+        let router = DetailRouter()
+        let presenter = DetailPresenter(view: view, interactor: interactor, router: router)
+        view.presenter = presenter
+        router.viewController = view
+        return view
+    }
 }
 
 extension DetailRouter: DetailRouterProtocol {

@@ -23,11 +23,14 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var searchTextField: UITextField!
     var presenter: HomePresenterProtocol!
     private let audioPlayer = AudioPlayer()
+    var typingTimer: Timer?
+    var previousIndex: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter.viewDidLoad()
+        searchTextField.delegate = self
         searchTextField.setLeftImage(image: UIImage(systemName: "magnifyingglass"))
     }
 }
@@ -40,28 +43,55 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(cellType: TrackCell.self, indexPath: indexPath)
-        if let track = presenter.getTrack(indexPath.row) {
-            let model = TrackCellModel (
-                trackName: track.trackName!,
-                artistName: track.artistName!,
-                imageUrl: track.artworkUrl100!,
-                previewUrl: track.previewURL ?? ""
-            )
-            cell.setup(model: model)
+        if let track = presenter.getTrackCellModel(indexPath.row) {
+            cell.setup(model: track)
+            cell.isFavorite = presenter.isFavorite(id: (presenter.getTrack(indexPath.row)?.trackID)!)
             cell.playButtonTapped = {
-                if let url = URL(string: model.previewUrl) {
+                if self.previousIndex == indexPath.row && cell.isPlaying {
                     self.audioPlayer.pauseAudio()
-                    self.audioPlayer.playAudio(from: url)
+                } else {
+                    if let url = URL(string: track.previewUrl) {
+                        if let previous = self.previousIndex {
+                            let previousCell = tableView.cellForRow(at: IndexPath(row: previous, section: 0)) as! TrackCell
+                            previousCell.isPlaying = false
+                            previousCell.playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                        }
+                        self.audioPlayer.pauseAudio()
+                        self.audioPlayer.playAudio(from: url)
+                    }
                 }
+                self.previousIndex = indexPath.row
             }
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.audioPlayer.pauseAudio()
         presenter.didSelectRowAt(index: indexPath.row)
     }
 }
+
+extension HomeViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        typingTimer?.invalidate()
+    
+        if let text = textField.text,
+           let range = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: range, with: string)
+            
+            if !updatedText.isEmpty {
+                typingTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { [weak self] timer in
+                    self!.audioPlayer.pauseAudio()
+                    self?.presenter.fetchData(query: updatedText)
+                }
+            }
+        }
+        return true
+    }
+}
+
 
 extension HomeViewController: HomeViewControllerProtocol {
     func setupTableView() {

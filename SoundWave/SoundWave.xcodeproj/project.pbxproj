@@ -33,6 +33,7 @@
 		0C1EF17F2A31F01900081CF5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */; };
 		0C1EF1802A31F01900081CF5 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */; };
 		0C1EF1822A31F09800081CF5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1812A31F09800081CF5 /* Reachability.swift */; };
+		0C756D9B2A39A93E008BE971 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */; };
 		0CF3DC802A31FA8E00386D21 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */; };
 		0CF3DC822A31FA9B00386D21 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */; };
 		0CF3DC842A31FAA400386D21 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC832A31FAA400386D21 /* DetailRouter.swift */; };
@@ -93,6 +94,7 @@
 		0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		0C1EF1812A31F09800081CF5 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		0CF3DC832A31FAA400386D21 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */,
 				0C1EF1812A31F09800081CF5 /* Reachability.swift */,
 				0CFD626A2A329531003EB522 /* AudioPlayer.swift */,
+				0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				0C1EF16B2A30BB0100081CF5 /* BaseViewController.swift in Sources */,
 				0C1EF15B2A30840700081CF5 /* HomePresenter.swift in Sources */,
 				0C1EF1682A308FA600081CF5 /* Tracks.swift in Sources */,
+				0C756D9B2A39A93E008BE971 /* CoreDataManager.swift in Sources */,
 				0C1EF17C2A31F00B00081CF5 /* SplashPresenter.swift in Sources */,
 				0C1EF1262A30786E00081CF5 /* SceneDelegate.swift in Sources */,
 				0C1EF15F2A30899500081CF5 /* HomeInteractor.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol SplashViewControllerProtocol: AnyObject {
     func noInternetConnection()
 }
@@ -20,13 +21,10 @@ final class SplashViewController: BaseViewController {
 
         presenter.viewDidAppear()
     }
-
 }
 
 extension SplashViewController: SplashViewControllerProtocol {
-    
     func noInternetConnection() {
-        showAlert("Error", "No internet")
+        showAlert("Error", "No internet Connection!")
     }
-    
 }

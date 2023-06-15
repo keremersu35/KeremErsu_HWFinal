@@ -60,26 +60,25 @@
                             <action selector="playButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ij9-VC-nH3"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-zq-crO">
-                        <rect key="frame" x="354.33333333333331" y="80" width="26.666666666666686" height="32"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI1-bc-Evo">
+                        <rect key="frame" x="349" y="80" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="26.670000000000002" id="edL-l6-CEr"/>
-                            <constraint firstAttribute="height" constant="32" id="iJW-bw-fh9"/>
+                            <constraint firstAttribute="height" constant="32" id="Ne8-hB-Zao"/>
+                            <constraint firstAttribute="width" constant="32" id="xxV-lN-TUF"/>
                         </constraints>
                         <color key="tintColor" name="Primary"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal">
-                            <color key="titleColor" name="Primary"/>
-                            <color key="titleShadowColor" name="Primary"/>
                             <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                         </state>
                         <connections>
-                            <action selector="favoriteButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E8k-8t-iLl"/>
+                            <action selector="favoriteButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="s7a-Rt-YBc"/>
                         </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" name="Background"/>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wI1-bc-Evo" secondAttribute="trailing" constant="16" id="7SP-i2-3Nc"/>
                     <constraint firstItem="uzA-Nk-8T4" firstAttribute="top" secondItem="G5S-Kw-uer" secondAttribute="bottom" constant="8" symbolic="YES" id="8oc-6r-aan"/>
                     <constraint firstItem="285-yJ-8su" firstAttribute="leading" secondItem="G5S-Kw-uer" secondAttribute="trailing" constant="16" id="Cyk-69-eUy"/>
                     <constraint firstAttribute="bottom" secondItem="PIc-CI-QzU" secondAttribute="bottom" constant="15" id="FPo-JS-zVT"/>
@@ -87,7 +86,6 @@
                     <constraint firstItem="PIc-CI-QzU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Nn6-9N-tJJ"/>
                     <constraint firstItem="uzA-Nk-8T4" firstAttribute="leading" secondItem="PIc-CI-QzU" secondAttribute="trailing" constant="16" id="RNK-A6-VoL"/>
                     <constraint firstAttribute="trailing" secondItem="285-yJ-8su" secondAttribute="trailing" constant="16" id="WPW-OD-TFt"/>
-                    <constraint firstAttribute="trailing" secondItem="jDv-zq-crO" secondAttribute="trailing" constant="16" id="bnL-y6-NSf"/>
                     <constraint firstItem="G5S-Kw-uer" firstAttribute="leading" secondItem="PIc-CI-QzU" secondAttribute="trailing" constant="16" id="g3P-or-H2i"/>
                     <constraint firstItem="PIc-CI-QzU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gP3-Js-vwa">
                         <userDefinedRuntimeAttributes>
@@ -96,9 +94,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </constraint>
+                    <constraint firstAttribute="bottom" secondItem="wI1-bc-Evo" secondAttribute="bottom" constant="8" id="n1B-Ia-hsL"/>
                     <constraint firstItem="285-yJ-8su" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="vnW-lx-esW"/>
                     <constraint firstItem="G5S-Kw-uer" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="x49-9h-gnF"/>
-                    <constraint firstAttribute="bottom" secondItem="jDv-zq-crO" secondAttribute="bottom" constant="8" id="xke-9u-U4q"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.borderWidth" value="YES"/>
@@ -108,7 +106,7 @@
             <connections>
                 <outlet property="artistNameLabel" destination="uzA-Nk-8T4" id="Z3B-vV-gHU"/>
                 <outlet property="coverImage" destination="PIc-CI-QzU" id="Ajy-AD-bBp"/>
-                <outlet property="favoriteButton" destination="jDv-zq-crO" id="uN2-sI-pIT"/>
+                <outlet property="favoriteButton" destination="wI1-bc-Evo" id="fuh-Rv-WlB"/>
                 <outlet property="nameLabel" destination="G5S-Kw-uer" id="7hy-zw-tL8"/>
                 <outlet property="playButton" destination="285-yJ-8su" id="TQh-X0-jVp"/>
             </connections>

@@ -11,11 +11,12 @@ final class TrackCell: UITableViewCell {
 
     @IBOutlet private weak var artistNameLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var playButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
     @IBOutlet private weak var coverImage: UIImageView!
     @IBOutlet private weak var favoriteButton: UIButton!
     var playButtonTapped: (() -> Void)?
-    private var isPlaying = false
+    var isPlaying = false
+    var isFavorite = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,13 +32,8 @@ final class TrackCell: UITableViewCell {
         nameLabel.text = model.trackName
         artistNameLabel.text = model.artistName
         let imageURL = URL(string: model.imageUrl)
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: imageURL!) {
-                DispatchQueue.main.async {
-                    self.coverImage.image = UIImage(data: data)
-                }
-            }
-        }
+        self.coverImage.loadImage(from: imageURL!)
+        favoriteButton.setImage(UIImage(systemName: model.isFav ? "heart.fill" : "heart"), for: .normal)
     }
     
     @IBAction func favoriteButtonAction(_ sender: UIButton) {
@@ -54,5 +50,8 @@ final class TrackCell: UITableViewCell {
         coverImage.image = nil
         nameLabel.text = nil
         artistNameLabel.text = nil
+        playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        isPlaying = false
     }
 }

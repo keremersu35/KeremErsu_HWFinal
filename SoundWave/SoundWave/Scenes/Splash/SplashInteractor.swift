@@ -12,7 +12,7 @@ protocol SplashInteractorProtocol {
 }
 
 protocol SplashInteractorOutputProtocol {
-    func internetConnection(status: Bool)
+    func internetConnectionStatus(_ status: Bool)
 }
 
 final class SplashInteractor {
@@ -22,7 +22,8 @@ final class SplashInteractor {
 extension SplashInteractor: SplashInteractorProtocol {
     
     func checkInternetConnection() {
-        let internetStatus = SoundWaveManager.shared.isConnectedToInternet()
-        self.output?.internetConnection(status: internetStatus)
+        let internetStatus = true
+        self.output?.internetConnectionStatus(internetStatus)
     }
+    
 }

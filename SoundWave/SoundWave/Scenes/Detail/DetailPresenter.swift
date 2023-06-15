@@ -9,7 +9,9 @@ import UIKit
 
 protocol DetailPresenterProtocol {
     func viewDidLoad()
-    func tapSeeMore()
+    func addToFavorite(track: Track)
+    func removeFromFavorite(id: Int)
+    func isFavorite(id: Int)
 }
 
 extension DetailPresenter {
@@ -21,45 +23,37 @@ extension DetailPresenter {
 final class DetailPresenter {
     
     unowned var view: DetailViewControllerProtocol!
+    let interactor: DetailInteractor!
     let router: DetailRouterProtocol!
     
     init(
         view: DetailViewControllerProtocol,
+        interactor: DetailInteractor,
         router: DetailRouterProtocol
     ) {
         self.view = view
+        self.interactor = interactor
         self.router = router
     }
-    
 }
 
 extension DetailPresenter: DetailPresenterProtocol {
     
+    func addToFavorite(track: Track) {
+        interactor.addToFavorites(track: track)
+    }
+    
+    func removeFromFavorite(id: Int) {
+        interactor.removeFromFavorites(id: id)
+    }
+    
+    func isFavorite(id: Int) {
+        let isFav = interactor.isFavorite(id: id)
+        view.checkFavoriteStatus(isFav)
+    }
+    
     func viewDidLoad() {
     
-//        guard let news = view.getSource() else { return }
-//        
-//        ImageDownloader.shared.image(
-//            news: news,
-//            format: .superJumbo)
-//        { [weak self] data, error in
-//            guard let self else { return }
-//            guard let data, error == nil else { return }
-//            guard let image = UIImage(data: data) else { return }
-//            self.view.setNewsImage(image)
-//        }
-//        
-//        
-//        view.setTitle(Constants.pageTitle)
-//        view.setNewsTitle(news.title ?? "")
-//        view.setNewsDetail(news.abstract ?? "")
-//        view.setNewsAuthor(news.byline ?? "")
+
     }
-    
-    func tapSeeMore() {
-//        guard let urlString = view.getSource()?.url else { return }
-//        guard let url = URL(string: urlString) else { return }
-//        router.navigate(.openURL(url: url))
-    }
-    
 }

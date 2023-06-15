@@ -7,27 +7,29 @@
 
 import Foundation
 
-protocol SplashPresenterProtocol: AnyObject {
+protocol SplashPresenterProtocol {
     func viewDidAppear()
 }
 
-final class SplashPresenter: SplashPresenterProtocol {
+final class SplashPresenter {
     
     unowned var view: SplashViewControllerProtocol!
     let router: SplashRouterProtocol!
     let interactor: SplashInteractorProtocol!
     
     init(
-         view: SplashViewControllerProtocol,
-         router: SplashRouterProtocol,
-         interactor: SplashInteractorProtocol
+        view: SplashViewControllerProtocol,
+        router: SplashRouterProtocol,
+        interactor: SplashInteractorProtocol
     ) {
         self.view = view
         self.router = router
         self.interactor = interactor
     }
     
-    
+}
+
+extension SplashPresenter: SplashPresenterProtocol {
     func viewDidAppear() {
         interactor.checkInternetConnection()
     }
@@ -35,10 +37,10 @@ final class SplashPresenter: SplashPresenterProtocol {
 
 extension SplashPresenter: SplashInteractorOutputProtocol {
     
-    func internetConnection(status: Bool) {
+    func internetConnectionStatus(_ status: Bool) {
         
         if status {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.async {
                 self.router.navigate(.homeScreen)
             }
         } else {

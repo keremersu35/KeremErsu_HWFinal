@@ -16,7 +16,7 @@ final class SoundWaveManager: SoundWaveManagerProtocol {
     public static let shared = SoundWaveManager()
     
     func getTracks(query: String, complete: @escaping((Tracks?, NetworkError?)->())) {
-        NetworkManager.shared.request(type: Tracks.self, url: NetworkHelper.shared.requestUrl(query.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!), method: .get)
+        NetworkManager.shared.request(type: Tracks.self, url: NetworkHelper.shared.requestUrl(query.lowercased()), method: .get)
         { response in
             switch response {
             case .success(let data):
