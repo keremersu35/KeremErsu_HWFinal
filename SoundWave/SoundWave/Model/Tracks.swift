@@ -19,15 +19,12 @@ struct Track: Decodable {
     let trackName: String?
     let previewURL: String?
     let artworkUrl100: String?
-    let trackCount: Int?
-    let description, collectionArtistName: String?
 
     enum CodingKeys: String, CodingKey {
         case kind
         case trackID = "trackId"
         case artistName, collectionName, trackName
         case previewURL = "previewUrl"
-        case artworkUrl100, trackCount
-        case description, collectionArtistName
+        case artworkUrl100
     }
 }

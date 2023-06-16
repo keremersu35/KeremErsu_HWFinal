@@ -32,6 +32,9 @@ class BaseViewController: UIViewController, LoadingShowable {
         }
         alert.addAction(okAction)
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
         present(alert, animated: true, completion: nil)
     }
     

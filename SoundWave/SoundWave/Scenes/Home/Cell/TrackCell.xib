@@ -60,25 +60,9 @@
                             <action selector="playButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ij9-VC-nH3"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI1-bc-Evo">
-                        <rect key="frame" x="349" y="80" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="32" id="Ne8-hB-Zao"/>
-                            <constraint firstAttribute="width" constant="32" id="xxV-lN-TUF"/>
-                        </constraints>
-                        <color key="tintColor" name="Primary"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal">
-                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
-                        </state>
-                        <connections>
-                            <action selector="favoriteButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="s7a-Rt-YBc"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" name="Background"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="wI1-bc-Evo" secondAttribute="trailing" constant="16" id="7SP-i2-3Nc"/>
                     <constraint firstItem="uzA-Nk-8T4" firstAttribute="top" secondItem="G5S-Kw-uer" secondAttribute="bottom" constant="8" symbolic="YES" id="8oc-6r-aan"/>
                     <constraint firstItem="285-yJ-8su" firstAttribute="leading" secondItem="G5S-Kw-uer" secondAttribute="trailing" constant="16" id="Cyk-69-eUy"/>
                     <constraint firstAttribute="bottom" secondItem="PIc-CI-QzU" secondAttribute="bottom" constant="15" id="FPo-JS-zVT"/>
@@ -94,7 +78,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </constraint>
-                    <constraint firstAttribute="bottom" secondItem="wI1-bc-Evo" secondAttribute="bottom" constant="8" id="n1B-Ia-hsL"/>
                     <constraint firstItem="285-yJ-8su" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="vnW-lx-esW"/>
                     <constraint firstItem="G5S-Kw-uer" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="x49-9h-gnF"/>
                 </constraints>
@@ -106,7 +89,6 @@
             <connections>
                 <outlet property="artistNameLabel" destination="uzA-Nk-8T4" id="Z3B-vV-gHU"/>
                 <outlet property="coverImage" destination="PIc-CI-QzU" id="Ajy-AD-bBp"/>
-                <outlet property="favoriteButton" destination="wI1-bc-Evo" id="fuh-Rv-WlB"/>
                 <outlet property="nameLabel" destination="G5S-Kw-uer" id="7hy-zw-tL8"/>
                 <outlet property="playButton" destination="285-yJ-8su" id="TQh-X0-jVp"/>
             </connections>
@@ -114,7 +96,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <image name="play.fill" catalog="system" width="117" height="128"/>
         <namedColor name="Background">

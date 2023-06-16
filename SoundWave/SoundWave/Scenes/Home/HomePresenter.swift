@@ -7,6 +7,7 @@
 
 import Foundation
 import Network
+import Extensions
 
 protocol HomePresenterProtocol: AnyObject {
     func viewDidLoad()
@@ -15,7 +16,7 @@ protocol HomePresenterProtocol: AnyObject {
     func getTrack(_ index: Int) -> Track?
     func didSelectRowAt(index: Int)
     func fetchData(query: String)
-    func isFavorite(id: Int) -> Bool
+    func navigateToFavorites()
 }
 
 final class HomePresenter {
@@ -25,7 +26,6 @@ final class HomePresenter {
     let interactor: HomeInteractorProtocol!
     
     var tracks: [Track] = []
-    var favorites: [Favorite] = []
     
     init(
          view: HomeViewControllerProtocol,
@@ -35,19 +35,13 @@ final class HomePresenter {
         self.view = view
         self.router = router
         self.interactor = interactor
-        favorites = interactor.getAllFavorites()
     }
 }
 
 extension HomePresenter: HomePresenterProtocol {
     
-    func isFavorite(id: Int) -> Bool {
-        for element in favorites {
-            if element.trackId == id {
-                return true
-            }
-        }
-        return false
+    func navigateToFavorites() {
+        router.navigate(.favorites)
     }
     
     func fetchData(query: String) {
@@ -67,6 +61,8 @@ extension HomePresenter: HomePresenterProtocol {
         tracks[index]
     }
     
+    
+    
     func getTrackCellModel(_ index: Int) -> TrackCellModel? {
         var trackCellModel: TrackCellModel? = nil
         if let model = getTrack(index) {
@@ -74,8 +70,7 @@ extension HomePresenter: HomePresenterProtocol {
                 trackName: model.trackName ?? "",
                 artistName: model.artistName ?? "",
                 imageUrl: model.artworkUrl100 ?? "",
-                previewUrl: model.previewURL ?? "",
-                isFav: isFavorite(id: model.trackID!))
+                previewUrl: model.previewURL ?? "")
         }
         return trackCellModel ?? nil
     }
@@ -87,7 +82,7 @@ extension HomePresenter: HomePresenterProtocol {
     
     func fetchTracks(query: String) {
         view.showLoadingView()
-        interactor.fetchTracks(query: query)
+        interactor.fetchTracks(query: query.convertingTurkishCharactersToEnglish())
         view.reloadData()
     }
 }

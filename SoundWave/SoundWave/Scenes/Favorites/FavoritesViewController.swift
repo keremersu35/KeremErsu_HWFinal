@@ -1,42 +1,40 @@
 //
-//  HomeViewController.swift
+//  FavoritesViewController.swift
 //  SoundWave
 //
-//  Created by Kerem Ersu on 8.06.2023.
+//  Created by Kerem Ersu on 15.06.2023.
 //
 
 import UIKit
-import Extensions
 
-protocol HomeViewControllerProtocol: AnyObject {
+protocol FavoritesViewControllerProtocol: AnyObject {
     func setupTableView()
     func reloadData()
     func showError(_ message: String)
     func showLoadingView()
     func hideLoadingView()
     func setTitle(_ title: String)
-    func navigateToFavorites()
 }
 
-final class HomeViewController: BaseViewController {
-    
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var searchTextField: UITextField!
-    var presenter: HomePresenterProtocol!
+final class FavoritesViewController: BaseViewController {
+
+    var presenter: FavoritesPresenterProtocol!
     private let audioPlayer = AudioPlayer()
-    private var typingTimer: Timer?
+    @IBOutlet private weak var tableView: UITableView!
     private var previousIndex: Int? = nil
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter.viewWillAppear()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         presenter.viewDidLoad()
-        searchTextField.delegate = self
-        searchTextField.setLeftImage(image: UIImage(systemName: "magnifyingglass"))
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.numberOfItems()
@@ -46,16 +44,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueCell(cellType: TrackCell.self, indexPath: indexPath)
         if let track = presenter.getTrackCellModel(indexPath.row) {
             cell.cellPresenter = TrackCellPresenter(view: cell, track: track)
-            
             cell.playButtonTapped = {
                 if self.previousIndex == indexPath.row && cell.checkIsPlaying() {
                     self.audioPlayer.pauseAudio()
                 } else {
                     if let url = URL(string: track.previewUrl) {
-                        if let previous = self.previousIndex  {
-                            let previousCell = tableView.cellForRow(at: IndexPath(row: previous, section: 0)) as? TrackCell
-                            previousCell?.setIsPlayingAsFalse()
-                            previousCell?.setButtonImageAsPlay()
+                        if let previous = self.previousIndex {
+                            let previousCell = tableView.cellForRow(at: IndexPath(row: previous, section: 0)) as! TrackCell
+                            previousCell.setIsPlayingAsFalse()
+                            previousCell.setButtonImageAsPlay()
                         }
                         self.audioPlayer.pauseAudio()
                         self.audioPlayer.playAudio(from: url)
@@ -68,26 +65,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.audioPlayer.pauseAudio()
         presenter.didSelectRowAt(index: indexPath.row)
     }
 }
 
-extension HomeViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        typingTimer?.invalidate()
-        
-        typingTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] timer in
-            self!.audioPlayer.pauseAudio()
-            guard let searchText = textField.text else { return }
-            self?.presenter.fetchData(query: searchText)
-        }
-        return true
-    }
-}
-
-extension HomeViewController: HomeViewControllerProtocol {
+extension FavoritesViewController: FavoritesViewControllerProtocol {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -101,7 +83,7 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func showError(_ message: String) {
-        self.showAlert("Error", "Error occured.")
+        
     }
     
     func showLoadingView() {
@@ -112,13 +94,9 @@ extension HomeViewController: HomeViewControllerProtocol {
         self.hideLoading()
     }
     
-    @objc func navigateToFavorites() {
-        audioPlayer.pauseAudio()
-        presenter.navigateToFavorites()
-    }
-    
     func setTitle(_ title: String) {
         self.title = title
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"),style: .plain, target: self, action: #selector(navigateToFavorites))
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "Primary")!]
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Primary")
     }
 }

@@ -13,6 +13,7 @@ protocol HomeRouterProtocol {
 
 enum HomeRoutes {
     case detail(source: Track?)
+    case favorites
 }
 
 final class HomeRouter {
@@ -40,6 +41,10 @@ extension HomeRouter: HomeRouterProtocol {
             let detailVC = DetailRouter.createModule()
             detailVC.source = source
             viewController?.navigationController?.pushViewController(detailVC, animated: true)
+            
+        case .favorites:
+            let favoritesVC = FavoritesRouter.createModule()
+            viewController?.navigationController?.pushViewController(favoritesVC, animated: true)
         }
     }
 }

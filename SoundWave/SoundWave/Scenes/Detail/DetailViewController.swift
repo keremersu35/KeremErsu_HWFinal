@@ -10,7 +10,13 @@ import UIKit
 protocol DetailViewControllerProtocol: AnyObject {
     func setTitle(_ title: String)
     func getSource() -> Track?
-    func checkFavoriteStatus(_ isFav: Bool)
+    func setImage(_ image: UIImage)
+    func setTrackName(_ name: String)
+    func setAlbumName(_ name: String)
+    func setArtistName(_ name: String)
+    func favoriteButtonTapped(_ isFavorite: Bool)
+    func checkFavorite(_ isFavorite: Bool)
+    func playButtonTapped(_ isPlaying: Bool)
 }
 
 final class DetailViewController: BaseViewController {
@@ -21,39 +27,31 @@ final class DetailViewController: BaseViewController {
     @IBOutlet private weak var playedTimeLabel: UILabel!
     @IBOutlet private weak var remainedTimeLabel: UILabel!
     @IBOutlet private weak var favoriteButton: UIButton!
+    @IBOutlet private weak var albumNameLabel: UILabel!
     @IBOutlet private weak var progressBar: UIProgressView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var artistNameLabel: UILabel!
     @IBOutlet private weak var coverImageView: UIImageView!
-    var timer: Timer?
-    var playbackTime: TimeInterval = 0
-    let rotationAnimationKey = "rotationAnimation"
-    var isPlaying = false
-    var isFav = false
-    private let audioPlayer = AudioPlayer()
+    private var timer: Timer?
+    private var playbackTime: TimeInterval = 0
+    private let rotationAnimationKey = "rotationAnimation"
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter.viewWillAppear()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
-        presenter.isFavorite(id: (source?.trackID)!)
-        progressBar.progress = 0
-        playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        let imageURL = URL(string: (source?.artworkUrl100?.replaceImageSize(size: 500))!)
-        self.coverImageView.loadImage(from: imageURL!)
-        nameLabel.text = source?.trackName
-        artistNameLabel.text = source?.artistName
+        playButton.setImage(UIImage(systemName: Constants.ImageNames.play.rawValue), for: .normal)
     }
     
     @IBAction func playButtonAction(_ sender: UIButton) {
-        isPlaying ? stopMusic() : playMusic()
-        let trackUrl = URL(string: source?.previewURL ?? "")
-        isPlaying ? audioPlayer.playAudio(from: trackUrl!) : audioPlayer.pauseAudio()
-        playButton.setImage(UIImage(systemName: isPlaying ? "pause.fill" : "play.fill"), for: .normal)
+        presenter.playButtonTapped()
     }
     
     func playMusic() {
-        isPlaying = true
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         startProgressBar()
         rotationAnimation.toValue = NSNumber(value: Double.pi * 2.0)
@@ -63,38 +61,55 @@ final class DetailViewController: BaseViewController {
     }
     
     @IBAction func FavoriteButtonAction(_ sender: UIButton) {
-        isFav.toggle()
-        isFav ? presenter.addToFavorite(track: source!)
-        : presenter.removeFromFavorite(id: (source?.trackID!)!)
-        self.favoriteButton.setImage(UIImage(systemName: isFav ? "heart.fill" : "heart"), for: .normal)
-        
+        presenter.favoriteButtonTapped()
     }
     
     func startProgressBar() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             self.playbackTime += 1.0
+            self.playedTimeLabel.text = self.playbackTime >= 10 ? "00:\(Int(self.playbackTime))" : "00:0\(Int(self.playbackTime))"
+            let remainingTime = 30 - Int(self.playbackTime)
+            self.remainedTimeLabel.text = self.playbackTime > 20 ? "00:0\(remainingTime)" : "00:\(remainingTime)"
             let progress = Float(self.playbackTime / 30)
             self.progressBar.progress = progress
-
+            
             if progress >= 1.0 {
-                self.timer?.invalidate()
+                self.stopMusic()
+                self.presenter.stopPlaying()
             }
         }
     }
     
     func stopMusic() {
-        isPlaying = false
         timer?.invalidate()
+        progressBar.progress = 0
         coverImageView.layer.removeAnimation(forKey: rotationAnimationKey)
     }
 }
 
 extension DetailViewController: DetailViewControllerProtocol {
     
-    func checkFavoriteStatus(_ isFav: Bool) {
-        self.isFav = isFav
-        self.favoriteButton.setImage(UIImage(systemName: isFav ? "heart.fill" : "heart"), for: .normal)
+    func favoriteButtonTapped(_ isFavorite: Bool) {
+        if isFavorite {
+            self.showAlert("Are You Sure?", "This track will be removed from favorite list.") {
+                self.presenter.removeFromFavorite()
+                self.favoriteButton.setImage(UIImage(systemName: Constants.ImageNames.fav.rawValue), for: .normal)
+            }
+        } else {
+            self.presenter.addToFavorite()
+            self.favoriteButton.setImage(UIImage(systemName: Constants.ImageNames.favFill.rawValue), for: .normal)
+        }
+    }
+    
+    func checkFavorite(_ isFavorite: Bool) {
+        self.favoriteButton.setImage(UIImage(systemName: isFavorite ? Constants.ImageNames.favFill.rawValue : Constants.ImageNames.fav.rawValue), for: .normal)
+    }
+    
+    func playButtonTapped(_ isPlaying: Bool) {
+        isPlaying ? playMusic() : stopMusic()
+        playButton.setImage(UIImage(systemName: isPlaying ? Constants.ImageNames.pause.rawValue :
+        Constants.ImageNames.play.rawValue), for: .normal)
     }
     
     func setTitle(_ title: String) {
@@ -103,5 +118,23 @@ extension DetailViewController: DetailViewControllerProtocol {
     
     func getSource() -> Track? {
         return source
+    }
+    
+    func setImage(_ image: UIImage) {
+        DispatchQueue.main.async {
+            self.coverImageView.image = image
+        }
+    }
+     
+    func setTrackName(_ name: String) {
+        self.nameLabel.text = name
+    }
+    
+    func setArtistName(_ name: String) {
+        self.artistNameLabel.text = name
+    }
+    
+    func setAlbumName(_ name: String) {
+        self.albumNameLabel.text = name
     }
 }

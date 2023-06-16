@@ -13,5 +13,4 @@ struct TrackCellModel {
     let artistName: String
     let imageUrl: String
     let previewUrl: String
-    var isFav: Bool
 }

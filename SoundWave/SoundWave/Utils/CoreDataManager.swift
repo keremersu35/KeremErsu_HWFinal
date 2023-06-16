@@ -100,7 +100,6 @@ final class CoreDataManager: CoreDataManagerProtocol {
         
         do {
             let favorites = try context.fetch(fetchRequest)
-            print(favorites)
             return favorites
         } catch {
             print("Error: Can't get favorites - \(error)")

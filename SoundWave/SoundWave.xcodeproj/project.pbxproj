@@ -34,6 +34,14 @@
 		0C1EF1802A31F01900081CF5 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */; };
 		0C1EF1822A31F09800081CF5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1812A31F09800081CF5 /* Reachability.swift */; };
 		0C756D9B2A39A93E008BE971 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */; };
+		0C756D9E2A3AFF0A008BE971 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */; };
+		0C756DA02A3AFF19008BE971 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */; };
+		0C756DA22A3AFF28008BE971 /* PresenterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756DA12A3AFF28008BE971 /* PresenterRouter.swift */; };
+		0C756DA52A3AFF4D008BE971 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756DA32A3AFF4D008BE971 /* FavoritesViewController.swift */; };
+		0C756DA62A3AFF4D008BE971 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C756DA42A3AFF4D008BE971 /* FavoritesViewController.xib */; };
+		0C756DA82A3B86AD008BE971 /* TrackCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756DA72A3B86AD008BE971 /* TrackCellPresenter.swift */; };
+		0C756DAA2A3BA3CB008BE971 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756DA92A3BA3CB008BE971 /* ImageDownloader.swift */; };
+		0C756DAC2A3BC162008BE971 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756DAB2A3BC162008BE971 /* Constants.swift */; };
 		0CF3DC802A31FA8E00386D21 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */; };
 		0CF3DC822A31FA9B00386D21 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */; };
 		0CF3DC842A31FAA400386D21 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3DC832A31FAA400386D21 /* DetailRouter.swift */; };
@@ -95,6 +103,14 @@
 		0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		0C1EF1812A31F09800081CF5 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		0C756DA12A3AFF28008BE971 /* PresenterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterRouter.swift; sourceTree = "<group>"; };
+		0C756DA32A3AFF4D008BE971 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		0C756DA42A3AFF4D008BE971 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		0C756DA72A3B86AD008BE971 /* TrackCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellPresenter.swift; sourceTree = "<group>"; };
+		0C756DA92A3BA3CB008BE971 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		0C756DAB2A3BC162008BE971 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		0CF3DC832A31FAA400386D21 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
@@ -204,6 +220,7 @@
 		0C1EF1582A3083F100081CF5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0C756D9C2A3AFEF5008BE971 /* Favorites */,
 				0CF3DC7E2A31FA7900386D21 /* Detail */,
 				0C1EF1722A31EF5D00081CF5 /* Splash */,
 				0C1EF1592A3083F700081CF5 /* Home */,
@@ -255,6 +272,8 @@
 				0C1EF1812A31F09800081CF5 /* Reachability.swift */,
 				0CFD626A2A329531003EB522 /* AudioPlayer.swift */,
 				0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */,
+				0C756DA92A3BA3CB008BE971 /* ImageDownloader.swift */,
+				0C756DAB2A3BC162008BE971 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -288,6 +307,18 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		0C756D9C2A3AFEF5008BE971 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */,
+				0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */,
+				0C756DA12A3AFF28008BE971 /* PresenterRouter.swift */,
+				0C756DA32A3AFF4D008BE971 /* FavoritesViewController.swift */,
+				0C756DA42A3AFF4D008BE971 /* FavoritesViewController.xib */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		0CF3DC7E2A31FA7900386D21 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +336,7 @@
 			children = (
 				0CF3DC8E2A3221E300386D21 /* TrackCell.swift */,
 				0CF3DC8F2A3221E300386D21 /* TrackCell.xib */,
+				0C756DA72A3B86AD008BE971 /* TrackCellPresenter.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -423,6 +455,7 @@
 				0CF3DC912A3221E300386D21 /* TrackCell.xib in Resources */,
 				0C1EF12B2A30786E00081CF5 /* Main.storyboard in Resources */,
 				0C1EF1802A31F01900081CF5 /* SplashViewController.xib in Resources */,
+				0C756DA62A3AFF4D008BE971 /* FavoritesViewController.xib in Resources */,
 				0C1EF1762A31EF7D00081CF5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +488,9 @@
 				0C1EF1782A31EFDE00081CF5 /* SplashRouter.swift in Sources */,
 				0CF3DC902A3221E300386D21 /* TrackCell.swift in Sources */,
 				0CF3DC842A31FAA400386D21 /* DetailRouter.swift in Sources */,
+				0C756DAC2A3BC162008BE971 /* Constants.swift in Sources */,
 				0CF3DC872A31FAB300386D21 /* DetailViewController.swift in Sources */,
+				0C756DA82A3B86AD008BE971 /* TrackCellPresenter.swift in Sources */,
 				0C1EF1712A30BB7A00081CF5 /* LoadingShowable.swift in Sources */,
 				0C1EF16F2A30BB6300081CF5 /* LoadingView.swift in Sources */,
 				0C1EF1822A31F09800081CF5 /* Reachability.swift in Sources */,
@@ -470,7 +505,12 @@
 				0C1EF17C2A31F00B00081CF5 /* SplashPresenter.swift in Sources */,
 				0C1EF1262A30786E00081CF5 /* SceneDelegate.swift in Sources */,
 				0C1EF15F2A30899500081CF5 /* HomeInteractor.swift in Sources */,
+				0C756D9E2A3AFF0A008BE971 /* FavoritesInteractor.swift in Sources */,
+				0C756DA52A3AFF4D008BE971 /* FavoritesViewController.swift in Sources */,
+				0C756DA02A3AFF19008BE971 /* FavoritesPresenter.swift in Sources */,
 				0C1EF1752A31EF7D00081CF5 /* HomeViewController.swift in Sources */,
+				0C756DAA2A3BA3CB008BE971 /* ImageDownloader.swift in Sources */,
+				0C756DA22A3AFF28008BE971 /* PresenterRouter.swift in Sources */,
 				0C1EF17F2A31F01900081CF5 /* SplashViewController.swift in Sources */,
 				0CF3DC932A322CC000386D21 /* TrackCellModel.swift in Sources */,
 			);

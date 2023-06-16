@@ -12,7 +12,6 @@ typealias TracksSourcesResult = Result<Tracks, NetworkError>
 
 protocol HomeInteractorProtocol: AnyObject {
     func fetchTracks(query: String)
-    func getAllFavorites() -> [Favorite]
 }
 
 protocol HomeInteractorOutputProtocol {
@@ -26,10 +25,6 @@ final class HomeInteractor {
 }
 
 extension HomeInteractor: HomeInteractorProtocol {
-    
-    func getAllFavorites() -> [Favorite] {
-        CoreDataManager().getAllFavorites()
-    }
     
     func fetchTracks(query: String) {
         trackService.getTracks(query: query.replacingOccurrences(of: " ", with: "+")) { [weak self] response, error in

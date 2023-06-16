@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Extensions
 
 public enum NetworkError: Error {
     case invalidRequest
@@ -30,10 +31,9 @@ public enum NetworkError: Error {
 public final class NetworkHelper {
     public static let shared = NetworkHelper()
     
-    private var baseURL = "https://itunes.apple.com/search?country=TR&media=all&term="
+    private var baseURL = "https://itunes.apple.com/search?country=TR&media=all&entity=song&attribute=mixTerm&term="
     
     public func requestUrl(_ url: String) -> String {
-        print(url)
         return baseURL + url
     }
 }

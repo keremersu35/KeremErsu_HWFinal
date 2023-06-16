@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="SoundWave" customModuleProvider="target">
             <connections>
+                <outlet property="albumNameLabel" destination="02T-hL-jdf" id="k2y-Cz-fwR"/>
                 <outlet property="artistNameLabel" destination="nmt-La-Bk4" id="g8R-6b-0Z8"/>
                 <outlet property="coverImageView" destination="3bD-dc-jbt" id="P1A-wp-Beh"/>
                 <outlet property="favoriteButton" destination="l7J-Uu-MLr" id="wqv-ik-mkx"/>
@@ -132,7 +133,7 @@
                         <constraint firstItem="Exn-RD-zp2" firstAttribute="centerY" secondItem="C1b-zP-jDo" secondAttribute="centerY" id="uid-zd-DrP"/>
                     </constraints>
                 </view>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ss1-rB-WRv">
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ss1-rB-WRv">
                     <rect key="frame" x="32" y="564.33333333333337" width="329" height="4"/>
                     <color key="tintColor" name="Primary"/>
                 </progressView>
@@ -142,7 +143,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7J-Uu-MLr">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7J-Uu-MLr">
                     <rect key="frame" x="297" y="625" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="cni-hn-F6p"/>
@@ -152,7 +153,12 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal">
                         <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
                     </state>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                    </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="24"/>
@@ -168,7 +174,7 @@
                     <color key="textColor" name="Primary"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBq-Mf-0r2">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBq-Mf-0r2">
                     <rect key="frame" x="331" y="576.33333333333337" width="46" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="Primary"/>
