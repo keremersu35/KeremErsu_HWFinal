@@ -204,6 +204,7 @@
 		0C1EF1222A30786E00081CF5 /* SoundWave */ = {
 			isa = PBXGroup;
 			children = (
+				0C2F5BA12A3CA8E000FDC41E /* Database */,
 				0C1EF1572A3083DC00081CF5 /* App */,
 				0C1EF16C2A30BB3F00081CF5 /* CustomViews */,
 				0C1EF1602A3089CF00081CF5 /* Model */,
@@ -303,7 +304,6 @@
 				0C1EF16A2A30BB0100081CF5 /* BaseViewController.swift */,
 				0C1EF1812A31F09800081CF5 /* Reachability.swift */,
 				0CFD626A2A329531003EB522 /* AudioPlayer.swift */,
-				0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */,
 				0C756DA92A3BA3CB008BE971 /* ImageDownloader.swift */,
 				0C756DAB2A3BC162008BE971 /* Constants.swift */,
 			);
@@ -387,6 +387,14 @@
 				0C2F5B9B2A3C829A00FDC41E /* MockFavoriteViewController.swift */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		0C2F5BA12A3CA8E000FDC41E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		0C756D9C2A3AFEF5008BE971 /* Favorites */ = {

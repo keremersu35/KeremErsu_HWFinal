@@ -43,6 +43,7 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setAccessiblityIdentifiers()
         presenter.viewDidLoad()
         playButton.setImage(UIImage(systemName: Constants.ImageNames.play.rawValue), for: .normal)
     }
@@ -136,5 +137,21 @@ extension DetailViewController: DetailViewControllerProtocol {
     
     func setAlbumName(_ name: String) {
         self.albumNameLabel.text = name
+    }
+}
+
+extension DetailViewController {
+    
+    func setAccessiblityIdentifiers() {
+
+        playButton.accessibilityIdentifier = "playButton"
+        playedTimeLabel.accessibilityIdentifier = "playedTimeLabel"
+        remainedTimeLabel.accessibilityIdentifier = "remainedTimeLabel"
+        favoriteButton.accessibilityIdentifier = "favoriteButton"
+        albumNameLabel.accessibilityIdentifier = "albumNameLabel"
+        progressBar.accessibilityIdentifier = "progressBar"
+        nameLabel.accessibilityIdentifier = "nameLabel"
+        artistNameLabel.accessibilityIdentifier = "artistNameLabel"
+        coverImageView.accessibilityIdentifier = "coverImageView"
     }
 }

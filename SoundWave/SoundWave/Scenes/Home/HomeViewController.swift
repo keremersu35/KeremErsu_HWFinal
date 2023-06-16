@@ -31,6 +31,7 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
+        setAccessiblityIdentifiers()
         searchTextField.delegate = self
         searchTextField.setLeftImage(image: UIImage(systemName: Constants.ImageNames.search.rawValue))
     }
@@ -120,5 +121,13 @@ extension HomeViewController: HomeViewControllerProtocol {
     func setTitle(_ title: String) {
         self.title = title
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"),style: .plain, target: self, action: #selector(navigateToFavorites))
+    }
+}
+
+extension HomeViewController {
+    
+    func setAccessiblityIdentifiers() {
+        searchTextField.accessibilityIdentifier = "searchTextField"
+        navigationItem.rightBarButtonItem?.accessibilityIdentifier = "navBarFavoriteButton"
     }
 }
