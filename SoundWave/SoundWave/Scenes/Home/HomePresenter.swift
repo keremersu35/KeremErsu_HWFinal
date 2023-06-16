@@ -61,8 +61,6 @@ extension HomePresenter: HomePresenterProtocol {
         tracks[index]
     }
     
-    
-    
     func getTrackCellModel(_ index: Int) -> TrackCellModel? {
         var trackCellModel: TrackCellModel? = nil
         if let model = getTrack(index) {
@@ -89,7 +87,7 @@ extension HomePresenter: HomePresenterProtocol {
 
 extension HomePresenter: HomeInteractorOutputProtocol {
     
-    func fetchTracksOutput(_ result: Result<Tracks, NetworkError>) {
+    func fetchTracksOutput(_ result: TracksSourcesResult) {
         
         view.hideLoadingView()
         switch result {

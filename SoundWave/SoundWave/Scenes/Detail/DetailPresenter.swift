@@ -27,7 +27,7 @@ extension DetailPresenter {
 final class DetailPresenter {
     
     unowned var view: DetailViewControllerProtocol!
-    let interactor: DetailInteractor!
+    let interactor: DetailInteractorProtocol!
     let router: DetailRouterProtocol!
     let audioPlayer: AudioPlayer?
     private var isPlaying = false
@@ -36,7 +36,7 @@ final class DetailPresenter {
     
     init(
         view: DetailViewControllerProtocol,
-        interactor: DetailInteractor,
+        interactor: DetailInteractorProtocol,
         router: DetailRouterProtocol
     ) {
         self.view = view
@@ -65,7 +65,7 @@ extension DetailPresenter: DetailPresenterProtocol {
     }
     
     func viewWillAppear() {
-        isFavorite(id: (track?.trackID)!)
+        isFavorite(id: (track?.trackID) ?? 0)
         view.checkFavorite(isFavorite)
     }
     
@@ -82,6 +82,7 @@ extension DetailPresenter: DetailPresenterProtocol {
             guard let image = UIImage(data: data) else { return }
             self.view.setImage(image)
         }
+        view.setTitle(track.trackName ?? "")
         view.setTrackName(track.trackName ?? "Can't get trackName")
         view.setAlbumName(track.collectionName ?? "Can't get collectionName")
         view.setArtistName(track.artistName ?? "Can't get artistName")
@@ -90,13 +91,16 @@ extension DetailPresenter: DetailPresenterProtocol {
     
     func playButtonTapped() {
         isPlaying.toggle()
-        let trackUrl = URL(string: track?.previewURL ?? "")
-        isPlaying ? audioPlayer?.playAudio(from: trackUrl!) : audioPlayer?.pauseAudio()
+        if let trackUrl = URL(string: track?.previewURL ?? "") {
+            isPlaying ? audioPlayer?.playAudio(from: trackUrl) : audioPlayer?.pauseAudio()
+        }
         view.playButtonTapped(isPlaying)
     }
     
     func favoriteButtonTapped() {
-        isFavorite(id: (track?.trackID)!)
+        if let id = track?.trackID {
+            isFavorite(id: id)
+        }
         view.favoriteButtonTapped(isFavorite)
     }
 }

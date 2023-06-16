@@ -29,7 +29,6 @@ final class FavoritesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         presenter.viewDidLoad()
     }
 }
@@ -50,9 +49,9 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     if let url = URL(string: track.previewUrl) {
                         if let previous = self.previousIndex {
-                            let previousCell = tableView.cellForRow(at: IndexPath(row: previous, section: 0)) as! TrackCell
-                            previousCell.setIsPlayingAsFalse()
-                            previousCell.setButtonImageAsPlay()
+                            let previousCell = tableView.cellForRow(at: IndexPath(row: previous, section: 0)) as? TrackCell
+                            previousCell?.setIsPlayingAsFalse()
+                            previousCell?.setButtonImageAsPlay()
                         }
                         self.audioPlayer.pauseAudio()
                         self.audioPlayer.playAudio(from: url)
@@ -67,9 +66,22 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelectRowAt(index: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            self.showAlert("Are You Sure?", "This track will be removed from favorite list.") {
+                self.presenter.removeSelectedFavorite(indexPath.row)
+            }
+        }
+    }
 }
 
 extension FavoritesViewController: FavoritesViewControllerProtocol {
+    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -83,7 +95,7 @@ extension FavoritesViewController: FavoritesViewControllerProtocol {
     }
     
     func showError(_ message: String) {
-        
+        self.showAlert("Error", "Error occured.")
     }
     
     func showLoadingView() {
@@ -96,7 +108,7 @@ extension FavoritesViewController: FavoritesViewControllerProtocol {
     
     func setTitle(_ title: String) {
         self.title = title
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "Primary")!]
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Primary")
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: Constants.ColorNames.primary.rawValue)!]
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(named: Constants.ColorNames.primary.rawValue)
     }
 }

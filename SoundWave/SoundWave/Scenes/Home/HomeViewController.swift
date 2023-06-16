@@ -32,7 +32,7 @@ final class HomeViewController: BaseViewController {
         
         presenter.viewDidLoad()
         searchTextField.delegate = self
-        searchTextField.setLeftImage(image: UIImage(systemName: "magnifyingglass"))
+        searchTextField.setLeftImage(image: UIImage(systemName: Constants.ImageNames.search.rawValue))
     }
 }
 

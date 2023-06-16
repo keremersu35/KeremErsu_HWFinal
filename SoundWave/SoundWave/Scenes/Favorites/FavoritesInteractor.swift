@@ -9,6 +9,7 @@ import Foundation
 
 protocol FavoritesInteractorProtocol: AnyObject {
     func getAllFavorites() -> [Favorite]?
+    func removeFromFavorites(id: Int)
 }
 
 protocol FavoritesInteractorOutputProtocol {
@@ -20,6 +21,11 @@ final class FavoritesInteractor {
 }
 
 extension FavoritesInteractor: FavoritesInteractorProtocol {
+    
+    func removeFromFavorites(id: Int) {
+        CoreDataManager().removeTrackFromFavorites(trackID: id)
+    }
+    
     func getAllFavorites() -> [Favorite]? {
         CoreDataManager().getAllFavorites()
     }

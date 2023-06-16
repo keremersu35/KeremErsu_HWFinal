@@ -11,21 +11,24 @@ protocol FavoritesPresenterProtocol: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
     func numberOfItems() -> Int
+    func getTrack(_ index: Int) -> Favorite?
     func getTrackCellModel(_ index: Int) -> TrackCellModel?
     func didSelectRowAt(index: Int)
     func getAllFavorites()
+    func removeFromFavorites(id: Int)
+    func removeSelectedFavorite(_ index: Int)
 }
 
 final class FavoritesPresenter {
    
-    unowned var view: FavoritesViewController
+    unowned var view: FavoritesViewControllerProtocol
     let router: FavoritesRouterProtocol!
     let interactor: FavoritesInteractorProtocol!
     
     var tracks: [Favorite] = []
     
     init(
-         view: FavoritesViewController,
+         view: FavoritesViewControllerProtocol,
          router: FavoritesRouterProtocol,
          interactor: FavoritesInteractorProtocol)
     {
@@ -36,7 +39,13 @@ final class FavoritesPresenter {
 }
 
 extension FavoritesPresenter: FavoritesPresenterProtocol {
-
+    
+    func removeSelectedFavorite(_ index: Int) {
+        let track = getTrack(index)
+        removeFromFavorites(id: Int(truncatingIfNeeded: track!.trackId))
+        getAllFavorites()
+    }
+    
     func viewDidLoad() {
         view.setupTableView()
         view.setTitle("Favorites")
@@ -78,5 +87,9 @@ extension FavoritesPresenter: FavoritesPresenterProtocol {
         tracks = interactor.getAllFavorites() ?? []
         view.reloadData()
         view.hideLoadingView()
+    }
+    
+    func removeFromFavorites(id: Int) {
+        interactor.removeFromFavorites(id: id)
     }
 }

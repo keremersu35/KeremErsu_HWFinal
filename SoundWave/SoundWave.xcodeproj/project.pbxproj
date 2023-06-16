@@ -13,7 +13,6 @@
 		0C1EF12E2A30786E00081CF5 /* SoundWave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF12C2A30786E00081CF5 /* SoundWave.xcdatamodeld */; };
 		0C1EF1302A30786F00081CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF12F2A30786F00081CF5 /* Assets.xcassets */; };
 		0C1EF1332A30786F00081CF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF1312A30786F00081CF5 /* LaunchScreen.storyboard */; };
-		0C1EF13E2A30786F00081CF5 /* SoundWaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF13D2A30786F00081CF5 /* SoundWaveTests.swift */; };
 		0C1EF1482A30786F00081CF5 /* SoundWaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1472A30786F00081CF5 /* SoundWaveUITests.swift */; };
 		0C1EF14A2A30786F00081CF5 /* SoundWaveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1492A30786F00081CF5 /* SoundWaveUITestsLaunchTests.swift */; };
 		0C1EF15B2A30840700081CF5 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF15A2A30840700081CF5 /* HomePresenter.swift */; };
@@ -33,6 +32,21 @@
 		0C1EF17F2A31F01900081CF5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */; };
 		0C1EF1802A31F01900081CF5 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */; };
 		0C1EF1822A31F09800081CF5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EF1812A31F09800081CF5 /* Reachability.swift */; };
+		0C2F5B7D2A3C5D5200FDC41E /* Tracks.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C2F5B7C2A3C5D5200FDC41E /* Tracks.json */; };
+		0C2F5B802A3C5ED100FDC41E /* MockHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B7F2A3C5ED100FDC41E /* MockHomeInteractor.swift */; };
+		0C2F5B822A3C5EE000FDC41E /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B812A3C5EE000FDC41E /* MockHomeViewController.swift */; };
+		0C2F5B842A3C60C000FDC41E /* MockHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B832A3C60C000FDC41E /* MockHomeRouter.swift */; };
+		0C2F5B862A3C61D700FDC41E /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B852A3C61D700FDC41E /* HomePresenterTests.swift */; };
+		0C2F5B882A3C6CB100FDC41E /* MockTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B872A3C6CB100FDC41E /* MockTrackCell.swift */; };
+		0C2F5B8C2A3C6EF700FDC41E /* TrackCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B8B2A3C6EF700FDC41E /* TrackCellPresenterTests.swift */; };
+		0C2F5B8F2A3C745C00FDC41E /* MockDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B8E2A3C745C00FDC41E /* MockDetailInteractor.swift */; };
+		0C2F5B912A3C746800FDC41E /* MockDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B902A3C746800FDC41E /* MockDetailRouter.swift */; };
+		0C2F5B932A3C747500FDC41E /* MockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B922A3C747500FDC41E /* MockDetailViewController.swift */; };
+		0C2F5B952A3C795900FDC41E /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B942A3C795900FDC41E /* DetailPresenterTests.swift */; };
+		0C2F5B982A3C827D00FDC41E /* MockFavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B972A3C827D00FDC41E /* MockFavoriteInteractor.swift */; };
+		0C2F5B9A2A3C828B00FDC41E /* MockFavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B992A3C828B00FDC41E /* MockFavoriteRouter.swift */; };
+		0C2F5B9C2A3C829A00FDC41E /* MockFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B9B2A3C829A00FDC41E /* MockFavoriteViewController.swift */; };
+		0C2F5BA02A3C903900FDC41E /* FavoritesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B9F2A3C903900FDC41E /* FavoritesPresenterTests.swift */; };
 		0C756D9B2A39A93E008BE971 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */; };
 		0C756D9E2A3AFF0A008BE971 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */; };
 		0C756DA02A3AFF19008BE971 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */; };
@@ -81,7 +95,6 @@
 		0C1EF1322A30786F00081CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C1EF1342A30786F00081CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C1EF1392A30786F00081CF5 /* SoundWaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundWaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C1EF13D2A30786F00081CF5 /* SoundWaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveTests.swift; sourceTree = "<group>"; };
 		0C1EF1432A30786F00081CF5 /* SoundWaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundWaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1EF1472A30786F00081CF5 /* SoundWaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveUITests.swift; sourceTree = "<group>"; };
 		0C1EF1492A30786F00081CF5 /* SoundWaveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -102,6 +115,21 @@
 		0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		0C1EF1812A31F09800081CF5 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0C2F5B7C2A3C5D5200FDC41E /* Tracks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tracks.json; sourceTree = "<group>"; };
+		0C2F5B7F2A3C5ED100FDC41E /* MockHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeInteractor.swift; sourceTree = "<group>"; };
+		0C2F5B812A3C5EE000FDC41E /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
+		0C2F5B832A3C60C000FDC41E /* MockHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeRouter.swift; sourceTree = "<group>"; };
+		0C2F5B852A3C61D700FDC41E /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		0C2F5B872A3C6CB100FDC41E /* MockTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackCell.swift; sourceTree = "<group>"; };
+		0C2F5B8B2A3C6EF700FDC41E /* TrackCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellPresenterTests.swift; sourceTree = "<group>"; };
+		0C2F5B8E2A3C745C00FDC41E /* MockDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailInteractor.swift; sourceTree = "<group>"; };
+		0C2F5B902A3C746800FDC41E /* MockDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailRouter.swift; sourceTree = "<group>"; };
+		0C2F5B922A3C747500FDC41E /* MockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailViewController.swift; sourceTree = "<group>"; };
+		0C2F5B942A3C795900FDC41E /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
+		0C2F5B972A3C827D00FDC41E /* MockFavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteInteractor.swift; sourceTree = "<group>"; };
+		0C2F5B992A3C828B00FDC41E /* MockFavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteRouter.swift; sourceTree = "<group>"; };
+		0C2F5B9B2A3C829A00FDC41E /* MockFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteViewController.swift; sourceTree = "<group>"; };
+		0C2F5B9F2A3C903900FDC41E /* FavoritesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterTests.swift; sourceTree = "<group>"; };
 		0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
 		0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
@@ -193,7 +221,11 @@
 		0C1EF13C2A30786F00081CF5 /* SoundWaveTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C1EF13D2A30786F00081CF5 /* SoundWaveTests.swift */,
+				0C2F5B7E2A3C5D6600FDC41E /* Mock */,
+				0C2F5B852A3C61D700FDC41E /* HomePresenterTests.swift */,
+				0C2F5B9F2A3C903900FDC41E /* FavoritesPresenterTests.swift */,
+				0C2F5B8B2A3C6EF700FDC41E /* TrackCellPresenterTests.swift */,
+				0C2F5B942A3C795900FDC41E /* DetailPresenterTests.swift */,
 			);
 			path = SoundWaveTests;
 			sourceTree = "<group>";
@@ -305,6 +337,56 @@
 				0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		0C2F5B7E2A3C5D6600FDC41E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F5B962A3C826100FDC41E /* Favorite */,
+				0C2F5B8D2A3C744100FDC41E /* Detail */,
+				0C2F5B8A2A3C6ED500FDC41E /* Cell */,
+				0C2F5B892A3C6EC600FDC41E /* Home */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		0C2F5B892A3C6EC600FDC41E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F5B7C2A3C5D5200FDC41E /* Tracks.json */,
+				0C2F5B7F2A3C5ED100FDC41E /* MockHomeInteractor.swift */,
+				0C2F5B812A3C5EE000FDC41E /* MockHomeViewController.swift */,
+				0C2F5B832A3C60C000FDC41E /* MockHomeRouter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0C2F5B8A2A3C6ED500FDC41E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F5B872A3C6CB100FDC41E /* MockTrackCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0C2F5B8D2A3C744100FDC41E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F5B8E2A3C745C00FDC41E /* MockDetailInteractor.swift */,
+				0C2F5B902A3C746800FDC41E /* MockDetailRouter.swift */,
+				0C2F5B922A3C747500FDC41E /* MockDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		0C2F5B962A3C826100FDC41E /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F5B972A3C827D00FDC41E /* MockFavoriteInteractor.swift */,
+				0C2F5B992A3C828B00FDC41E /* MockFavoriteRouter.swift */,
+				0C2F5B9B2A3C829A00FDC41E /* MockFavoriteViewController.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		0C756D9C2A3AFEF5008BE971 /* Favorites */ = {
@@ -464,6 +546,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2F5B7D2A3C5D5200FDC41E /* Tracks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +603,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1EF13E2A30786F00081CF5 /* SoundWaveTests.swift in Sources */,
+				0C2F5B822A3C5EE000FDC41E /* MockHomeViewController.swift in Sources */,
+				0C2F5B882A3C6CB100FDC41E /* MockTrackCell.swift in Sources */,
+				0C2F5B9A2A3C828B00FDC41E /* MockFavoriteRouter.swift in Sources */,
+				0C2F5BA02A3C903900FDC41E /* FavoritesPresenterTests.swift in Sources */,
+				0C2F5B802A3C5ED100FDC41E /* MockHomeInteractor.swift in Sources */,
+				0C2F5B862A3C61D700FDC41E /* HomePresenterTests.swift in Sources */,
+				0C2F5B8F2A3C745C00FDC41E /* MockDetailInteractor.swift in Sources */,
+				0C2F5B8C2A3C6EF700FDC41E /* TrackCellPresenterTests.swift in Sources */,
+				0C2F5B9C2A3C829A00FDC41E /* MockFavoriteViewController.swift in Sources */,
+				0C2F5B932A3C747500FDC41E /* MockDetailViewController.swift in Sources */,
+				0C2F5B982A3C827D00FDC41E /* MockFavoriteInteractor.swift in Sources */,
+				0C2F5B912A3C746800FDC41E /* MockDetailRouter.swift in Sources */,
+				0C2F5B842A3C60C000FDC41E /* MockHomeRouter.swift in Sources */,
+				0C2F5B952A3C795900FDC41E /* DetailPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

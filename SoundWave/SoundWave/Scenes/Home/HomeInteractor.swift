@@ -15,7 +15,7 @@ protocol HomeInteractorProtocol: AnyObject {
 }
 
 protocol HomeInteractorOutputProtocol {
-    func fetchTracksOutput(_ result: Result<Tracks, NetworkError>)
+    func fetchTracksOutput(_ result: TracksSourcesResult)
 }
 
 fileprivate var trackService: SoundWaveManagerProtocol = SoundWaveManager()
