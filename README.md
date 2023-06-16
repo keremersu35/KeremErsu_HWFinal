@@ -50,6 +50,8 @@ enjoy the app to the fullest.
 
 ## VIPER
 
+<img src="SoundWaveImages/viper.png">
+
 VIPER is an acronym for View, Interactor, Presenter, Entity, and Router. It is an architectural design pattern that promotes separation of concerns and modular development in iOS application development. Here's a brief explanation of each component in VIPER:
 
 View: The View layer is responsible for presenting the user interface (UI) and handling user interactions. It receives input from the user and sends it to the Presenter for processing.
@@ -73,15 +75,3 @@ The VIPER architecture promotes a modular and scalable approach to iOS developme
 3. Open the project file in Xcode: open SoundWave.xcworkspace
 4. Wait for the dependencies to be loaded.
 5. Build and run the project in the iOS simulator or on a physical device by selecting a target and clicking the "Run" button in Xcode.
-
-
-
-
-
-
-
-
-
-
-
-
