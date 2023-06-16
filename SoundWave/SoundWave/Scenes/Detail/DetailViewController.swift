@@ -115,6 +115,7 @@ extension DetailViewController: DetailViewControllerProtocol {
     
     func setTitle(_ title: String) {
         self.title = title
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: Constants.ColorNames.primary.rawValue)!]
     }
     
     func getSource() -> Track? {
@@ -145,9 +146,6 @@ extension DetailViewController {
     func setAccessiblityIdentifiers() {
 
         playButton.accessibilityIdentifier = "playButton"
-        playedTimeLabel.accessibilityIdentifier = "playedTimeLabel"
-        remainedTimeLabel.accessibilityIdentifier = "remainedTimeLabel"
-        favoriteButton.accessibilityIdentifier = "favoriteButton"
         albumNameLabel.accessibilityIdentifier = "albumNameLabel"
         progressBar.accessibilityIdentifier = "progressBar"
         nameLabel.accessibilityIdentifier = "nameLabel"

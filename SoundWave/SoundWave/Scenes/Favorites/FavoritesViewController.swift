@@ -30,6 +30,7 @@ final class FavoritesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        checkEmptyState()
     }
 }
 
@@ -91,6 +92,7 @@ extension FavoritesViewController: FavoritesViewControllerProtocol {
     func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.checkEmptyState()
         }
     }
     
@@ -110,5 +112,16 @@ extension FavoritesViewController: FavoritesViewControllerProtocol {
         self.title = title
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: Constants.ColorNames.primary.rawValue)!]
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor(named: Constants.ColorNames.primary.rawValue)
+    }
+    
+    func checkEmptyState() {
+        if presenter.numberOfItems() == 0 {
+            tableView.setEmptyView(
+                icon: UIImage(systemName: Constants.ImageNames.favFill.rawValue)!,
+                text: "Your favorite list is empty!"
+            )
+        } else {
+            tableView.restore()
+        }
     }
 }

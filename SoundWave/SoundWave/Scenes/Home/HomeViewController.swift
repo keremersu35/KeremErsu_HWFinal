@@ -30,6 +30,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkEmptyState(searchText: searchTextField.text ?? "")
         presenter.viewDidLoad()
         setAccessiblityIdentifiers()
         searchTextField.delegate = self
@@ -78,10 +79,10 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         typingTimer?.invalidate()
-        
         typingTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] timer in
             self!.audioPlayer.pauseAudio()
             guard let searchText = textField.text else { return }
+            self?.checkEmptyState(searchText: searchText)
             self?.presenter.fetchData(query: searchText)
         }
         return true
@@ -120,7 +121,9 @@ extension HomeViewController: HomeViewControllerProtocol {
     
     func setTitle(_ title: String) {
         self.title = title
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"),style: .plain, target: self, action: #selector(navigateToFavorites))
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: Constants.ColorNames.primary.rawValue)!]
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: Constants.ImageNames.favFill.rawValue),style: .plain, target: self, action: #selector(navigateToFavorites))
     }
 }
 
@@ -129,5 +132,22 @@ extension HomeViewController {
     func setAccessiblityIdentifiers() {
         searchTextField.accessibilityIdentifier = "searchTextField"
         navigationItem.rightBarButtonItem?.accessibilityIdentifier = "navBarFavoriteButton"
+    }
+    
+    func checkEmptyState(searchText: String) {
+        if presenter.numberOfItems() == 0 && !searchText.isEmpty {
+            tableView.setEmptyView(
+                icon: UIImage(systemName: Constants.ImageNames.empty.rawValue)!,
+                text: "There is no content with your query"
+            )
+        }
+        else if presenter.numberOfItems() == 0 && searchText.isEmpty {
+            tableView.setEmptyView(
+                icon: UIImage(systemName: Constants.ImageNames.music.rawValue)!,
+                text: "Search for the\n content you're looking for"
+            )
+        } else {
+            tableView.restore()
+        }
     }
 }

@@ -23,5 +23,7 @@ struct Constants {
         case fav = "heart"
         case play = "play.fill"
         case pause = "pause.fill"
+        case empty = "bin.xmark.fill"
+        case music = "music.quarternote.3"
     }
 }

@@ -47,6 +47,7 @@
 		0C2F5B9A2A3C828B00FDC41E /* MockFavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B992A3C828B00FDC41E /* MockFavoriteRouter.swift */; };
 		0C2F5B9C2A3C829A00FDC41E /* MockFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B9B2A3C829A00FDC41E /* MockFavoriteViewController.swift */; };
 		0C2F5BA02A3C903900FDC41E /* FavoritesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5B9F2A3C903900FDC41E /* FavoritesPresenterTests.swift */; };
+		0C2F5BA42A3CAC1C00FDC41E /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F5BA32A3CAC1C00FDC41E /* EmptyView.swift */; };
 		0C756D9B2A39A93E008BE971 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */; };
 		0C756D9E2A3AFF0A008BE971 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */; };
 		0C756DA02A3AFF19008BE971 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */; };
@@ -130,6 +131,7 @@
 		0C2F5B992A3C828B00FDC41E /* MockFavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteRouter.swift; sourceTree = "<group>"; };
 		0C2F5B9B2A3C829A00FDC41E /* MockFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteViewController.swift; sourceTree = "<group>"; };
 		0C2F5B9F2A3C903900FDC41E /* FavoritesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterTests.swift; sourceTree = "<group>"; };
+		0C2F5BA32A3CAC1C00FDC41E /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		0C756D9A2A39A93E008BE971 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
 		0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
@@ -265,9 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				0CF3DC8D2A3221CC00386D21 /* Cell */,
-				0C1EF15A2A30840700081CF5 /* HomePresenter.swift */,
-				0C1EF15C2A30840F00081CF5 /* HomeRouter.swift */,
 				0C1EF15E2A30899500081CF5 /* HomeInteractor.swift */,
+				0C1EF15C2A30840F00081CF5 /* HomeRouter.swift */,
+				0C1EF15A2A30840700081CF5 /* HomePresenter.swift */,
 				0C1EF1732A31EF7D00081CF5 /* HomeViewController.swift */,
 				0C1EF1742A31EF7D00081CF5 /* HomeViewController.xib */,
 			);
@@ -313,6 +315,7 @@
 		0C1EF16C2A30BB3F00081CF5 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				0C2F5BA22A3CAC0F00FDC41E /* EmptyView */,
 				0C1EF16D2A30BB4600081CF5 /* LoadingView */,
 			);
 			path = CustomViews;
@@ -330,8 +333,8 @@
 		0C1EF1722A31EF5D00081CF5 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				0C1EF1772A31EFDE00081CF5 /* SplashRouter.swift */,
 				0C1EF1792A31F00100081CF5 /* SplashInteractor.swift */,
+				0C1EF1772A31EFDE00081CF5 /* SplashRouter.swift */,
 				0C1EF17B2A31F00B00081CF5 /* SplashPresenter.swift */,
 				0C1EF17D2A31F01900081CF5 /* SplashViewController.swift */,
 				0C1EF17E2A31F01900081CF5 /* SplashViewController.xib */,
@@ -397,12 +400,20 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		0C2F5BA22A3CAC0F00FDC41E /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F5BA32A3CAC1C00FDC41E /* EmptyView.swift */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 		0C756D9C2A3AFEF5008BE971 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
 				0C756D9D2A3AFF0A008BE971 /* FavoritesInteractor.swift */,
-				0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */,
 				0C756DA12A3AFF28008BE971 /* PresenterRouter.swift */,
+				0C756D9F2A3AFF19008BE971 /* FavoritesPresenter.swift */,
 				0C756DA32A3AFF4D008BE971 /* FavoritesViewController.swift */,
 				0C756DA42A3AFF4D008BE971 /* FavoritesViewController.xib */,
 			);
@@ -413,8 +424,8 @@
 			isa = PBXGroup;
 			children = (
 				0CF3DC7F2A31FA8E00386D21 /* DetailInteractor.swift */,
-				0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */,
 				0CF3DC832A31FAA400386D21 /* DetailRouter.swift */,
+				0CF3DC812A31FA9B00386D21 /* DetailPresenter.swift */,
 				0CF3DC852A31FAB300386D21 /* DetailViewController.swift */,
 				0CF3DC862A31FAB300386D21 /* DetailViewController.xib */,
 			);
@@ -425,8 +436,8 @@
 			isa = PBXGroup;
 			children = (
 				0CF3DC8E2A3221E300386D21 /* TrackCell.swift */,
-				0CF3DC8F2A3221E300386D21 /* TrackCell.xib */,
 				0C756DA72A3B86AD008BE971 /* TrackCellPresenter.swift */,
+				0CF3DC8F2A3221E300386D21 /* TrackCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -585,6 +596,7 @@
 				0C1EF1712A30BB7A00081CF5 /* LoadingShowable.swift in Sources */,
 				0C1EF16F2A30BB6300081CF5 /* LoadingView.swift in Sources */,
 				0C1EF1822A31F09800081CF5 /* Reachability.swift in Sources */,
+				0C2F5BA42A3CAC1C00FDC41E /* EmptyView.swift in Sources */,
 				0CFD626B2A329531003EB522 /* AudioPlayer.swift in Sources */,
 				0C1EF1242A30786E00081CF5 /* AppDelegate.swift in Sources */,
 				0C1EF12E2A30786E00081CF5 /* SoundWave.xcdatamodeld in Sources */,
